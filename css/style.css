@@ -1,0 +1,48 @@
+* { 
+	box-sizing: border-box;
+	margin: 0;
+}
+
+h1 { 
+	font-size: 2em;
+	text-align: center;
+}
+
+.create-column {
+	display: block;
+	margin: 50px auto;
+}
+
+.column-container { 
+	display: flex;
+	justify-content: center;
+	margin: 0 50px;
+}
+ 
+.column {
+	border: 1px solid black;
+	margin: 0 50px;
+	min-width: 500px;
+	min-height: 500px;
+}
+
+.column-title {
+	text-align: center;
+}
+
+.column-card-list { 
+	list-style-type: none;
+	background-color: yellow;
+	align: left;
+}
+
+.card { 
+	background-color: white;
+	margin: 10px auto; 
+	}
+
+.btn-delete-col { 
+	top: -60px; 
+	position: relative;	
+	}
+
