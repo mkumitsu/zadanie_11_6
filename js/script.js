@@ -17,13 +17,8 @@ var board = {
 $('.create-column').click(function() {
 	var name = prompt('Enter a column name', 'Column');
 	var column = new Column(name);
-	if (name == null) {
-		console.log("kliknięto anuluj");
-	} else if(name == ""){
-	console.log("Nie podano nazwy, wybrano nazwę domyślną");
-	var column = new Column("Column");
-	board.addColumn(column);
-	console.log(Column.name);
+	if (name === null || name === "") {
+		return false;
 	} else {
 		board.addColumn(column);
 	}
@@ -47,7 +42,7 @@ function Column(name) {
 			self.removeColumn();
 		});
 		$columnAddCard.click(function(event) {
-			self.addCard(new Card(prompt("Enter the name of the card")));
+			self.addCard(new Card(prompt("Enter the name of the card", "Card")));
 		});
 		// CONSTRUCTION COLUMN ELEMENT
 		$column.append($columnTitle).append($columnDelete).append($columnAddCard).append($columnCardList);
