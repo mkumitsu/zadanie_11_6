@@ -17,7 +17,16 @@ var board = {
 $('.create-column').click(function() {
 	var name = prompt('Enter a column name', 'Column');
 	var column = new Column(name);
+	if (name == null) {
+		console.log("kliknięto anuluj");
+	} else if(name == ""){
+	console.log("Nie podano nazwy, wybrano nazwę domyślną");
+	var column = new Column("Column");
 	board.addColumn(column);
+	console.log(Column.name);
+	} else {
+		board.addColumn(column);
+	}
 });
 //kolumny
 function Column(name) {
