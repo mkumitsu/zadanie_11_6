@@ -15,18 +15,18 @@ var board = {
 	$element: $('#board .column-container')
 };
 $('.create-column').click(function() {
-  var name = prompt('Enter a column name', 'Column');
-  // jeśli nie podano nazwy - wychodzimy z funkcji
-  if (name === null) {
-    return;
-  }
-  // jeśli nazwa jest pusta - ustawiamy "No name given"
-  if (name === "") {
-    name = "No name given";
-  }
-  // … i dodajemy nową kolumnę do board'a
-  var column = new Column(name);
-  board.addColumn(column);
+	var name = prompt('Enter a column name', 'Column');
+	// jeśli nie podano nazwy - wychodzimy z funkcji
+	if (name === null) {
+		return;
+	}
+	// jeśli nazwa jest pusta - ustawiamy "No name given"
+	if (name === "") {
+		name = "No name given";
+	}
+	// … i dodajemy nową kolumnę do board'a
+	var column = new Column(name);
+	board.addColumn(column);
 });
 //kolumny
 function Column(name) {
@@ -48,6 +48,12 @@ function Column(name) {
 		});
 		$columnAddCard.click(function(event) {
 			var name = prompt("Enter the name of the card", "Card");
+			if (name === null) {
+				return;
+			}
+			if (name === "") {
+				name = "No name given";
+			}
 			var card = new Card(name);
 			self.addCard(card);
 		});
